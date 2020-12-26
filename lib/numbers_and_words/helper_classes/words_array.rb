@@ -1,11 +1,15 @@
 # frozen_string_literal: true
 
-require 'numbers_and_words/helper_classes/array_extensions/helpers'
-
 module NumbersAndWords
-  class WordsArray < Array
+  class WordsArray
+    attr_reader :collection
+
+    def initialize(collection = [])
+      @collection = collection
+    end
+
     def join(options = {})
-      local_language { Strategies.array_joiner.new(to_a, options).run }
+      local_language { Strategies.array_joiner.new(collection, options).run }
     end
 
     def local_language(&block)

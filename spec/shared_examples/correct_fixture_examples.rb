@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 shared_examples 'correct fixture examples' do |examples|
+  using NumbersAndWords::Extensions
   examples.each_pair do |method_name, context_names|
     context "##{method_name}" do
       context_names.each do |context_name, tests|

@@ -18,7 +18,7 @@ module NumbersAndWords
             end
 
             def full_fraction
-              (0..zero_length).inject(figures.clone) { |result, _el| result.unshift '0' }.to_figures
+              (0..zero_length).inject(figures.clone) { |result, _el| result.unshift '0' }
             end
 
             def figures
@@ -26,7 +26,7 @@ module NumbersAndWords
             end
 
             def zero_length
-              fraction_length - figures.length
+              fraction_length - figures.size
             end
 
             def fraction_length

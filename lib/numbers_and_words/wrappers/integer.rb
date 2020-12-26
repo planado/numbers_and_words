@@ -16,7 +16,7 @@ module NumbersAndWords
       private
 
       def to_figures_array
-        number.to_s.split(//).map(&:to_i).to_figures
+        FiguresArray.new(number.to_s.chars.map(&:to_i))
       end
     end
   end

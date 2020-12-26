@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'numbers_and_words/wrappers/integer'
+
 module NumbersAndWords
   module Wrappers
     class Float
@@ -38,11 +40,11 @@ module NumbersAndWords
       end
 
       def integral_part_with(options)
-        integral_part.to_i.to_words options.merge(integral_options)
+        Integer.new(integral_part.to_i).to_words(options.merge(integral_options))
       end
 
       def fractional_part_with(options)
-        fractional_part.to_i.to_words options.merge(fractional_options)
+        Integer.new(fractional_part.to_i).to_words(options.merge(fractional_options))
       end
 
       def integral_options

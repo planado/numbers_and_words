@@ -1,11 +1,13 @@
 # frozen_string_literal: true
 
-class Array
-  def to_words(options = {})
-    map { |element| element.to_words options }
-  end
+module NumbersAndWords
+  module Extensions
+    using Extensions
 
-  def to_figures
-    NumbersAndWords::FiguresArray.new self
+    refine ::Array do
+      def to_words(options = {})
+        map { |e| e.to_words(options) }
+      end
+    end
   end
 end

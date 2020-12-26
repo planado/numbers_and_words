@@ -14,7 +14,7 @@ module NumbersAndWords
           end
 
           def greater_than_2000?
-            @figures.length > 4 || (@figures.length == 4 && @figures.last >= 2)
+            @figures.size > 4 || (@figures.size == 4 && @figures[-1] >= 2)
           end
 
           def strings_logic

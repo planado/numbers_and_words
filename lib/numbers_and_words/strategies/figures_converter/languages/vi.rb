@@ -1,10 +1,14 @@
 # frozen_string_literal: true
 
+require 'numbers_and_words/core_ext'
+
 module NumbersAndWords
   module Strategies
     module FiguresConverter
       module Languages
         class Vi < Base
+          using Extensions
+
           def print_words
             value = super
             remove_billion_noice(value)
@@ -76,7 +80,7 @@ module NumbersAndWords
           end
 
           def fraction_number_zeros_leading
-            fraction_length - @figures.length
+            fraction_length - @figures.size
           end
 
           def remove_billion_noice(value)
